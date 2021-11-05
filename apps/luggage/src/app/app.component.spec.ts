@@ -24,8 +24,10 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain(
-      'Welcome to luggage!'
-    );
+
+    expect(compiled.querySelector('li:nth-child(1) a')?.textContent)
+      .toContain('Check-in');
+    expect(compiled.querySelector('li:nth-child(2) a')?.textContent)
+      .toContain('Report Loss');
   });
 });
